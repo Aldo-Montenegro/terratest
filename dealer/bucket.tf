@@ -1,6 +1,7 @@
 variable "AWS_ACCESS_KEY_ID" {}
 variable "AWS_SECRET_KEY_ID" {}
 variable "region" {}
+variable "bucket" {}
 
 provider "aws" {
     region = var.region
@@ -16,9 +17,6 @@ resource "aws_s3_bucket" "bucket1" {
   website {
       index_document = "index.html"
   }
-  tags = {
-        Name = "Bucket-1"
-    }
 }
 
 /*------------content------------*/
@@ -29,7 +27,4 @@ resource "aws_s3_bucket_object" "object1" {
   acl = "public-read"
   content = var.content
   content_type = "text/html"
-  tags = {
-        Name = "Objeto-1"
-    }
 }
