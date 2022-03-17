@@ -1,6 +1,6 @@
 variable "bucket" { 
     type = string
-    default = "buckets3Aldo"
+    default = "buckets3aldo"
 }
 
 variable "content" { 
